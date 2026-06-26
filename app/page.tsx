@@ -454,7 +454,7 @@ export default function Home() {
             ))}
             <div className="w-16 h-[1px] bg-neutral-300 my-4"></div>
             <button onClick={() => { setIsDonationOpen(true); setIsMenuOpen(false); }} className="w-full max-w-xs py-4 bg-blue-900 text-white font-bold uppercase tracking-widest">
-              Quero Doar
+               Quero Doar
             </button>
           </motion.div>
         )}
@@ -715,6 +715,108 @@ export default function Home() {
                   </motion.div>
                 )}
               </AnimatePresence>
+            </div>
+
+            {/* Accordion Item 3: Edital 001/2026 - RH */}
+            <div className="border border-neutral-200 bg-white p-1 rounded-sm mt-2">
+                <button
+                    onClick={() => setOpenTransparency(openTransparency === 'edital1' ? null : 'edital1')}
+                    className={cn("w-full py-6 px-6 flex items-center justify-between text-left group transition-colors", openTransparency === 'edital1' ? 'bg-neutral-50' : 'bg-white')}
+                >
+                    <div>
+                        <span className="text-[10px] font-bold text-blue-900 uppercase tracking-widest mb-1 block">Processo Seletivo</span>
+                        <h3 className="font-serif text-xl sm:text-2xl text-neutral-900">Cotação Prévia Nº 001/2026 - RH</h3>
+                    </div>
+                    <div className={`w-10 h-10 flex items-center justify-center border border-neutral-200 rounded-full transition-all duration-300 ${openTransparency === 'edital1' ? 'rotate-180 bg-neutral-900 text-white border-neutral-900' : ''}`}>
+                        <ChevronDown size={18} />
+                    </div>
+                </button>
+                <AnimatePresence>
+                    {openTransparency === 'edital1' && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                        >
+                            <div className="p-6 md:p-8 pt-0 grid md:grid-cols-2 gap-8 text-sm text-neutral-600 border-t border-neutral-100 mt-4">
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="font-bold text-neutral-900 mb-1">Objeto do Edital</p>
+                                        <p>Contratação de recursos humanos (Coordenador Geral, Coordenador Operacional e Auxiliar Operacional) para a realização do Evento Copa União Satélite no DF.</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-neutral-900 mb-1">Prazos</p>
+                                        <p><strong>Recebimento:</strong> 10/06/2026 até 15/06/2026</p>
+                                        <p><strong>Homologação:</strong> 15/06/2026 às 14h</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="font-bold text-neutral-900 mb-1">Informações Financeiras</p>
+                                        <p><strong>Convênio Relacionado:</strong> Termo de Fomento Nº 992769</p>
+                                        <p><strong>Valor Estimado:</strong> R$ 24.520,00</p>
+                                        <p><strong>Critério:</strong> Menor preço por item</p>
+                                    </div>
+                                    <div className="pt-2">
+                                        <a href="/Edital RH (1).docx (1).pdf" target="_blank" className="flex items-center justify-center gap-2 text-xs font-bold uppercase bg-blue-900 text-white hover:bg-blue-800 px-4 py-3 transition-colors w-full">
+                                            <FileText size={14} /> Baixar Edital Completo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+            </div>
+
+            {/* Accordion Item 4: Edital 002/2026 - Bens e Serviços */}
+            <div className="border border-neutral-200 bg-white p-1 rounded-sm mt-2">
+                <button
+                    onClick={() => setOpenTransparency(openTransparency === 'edital2' ? null : 'edital2')}
+                    className={cn("w-full py-6 px-6 flex items-center justify-between text-left group transition-colors", openTransparency === 'edital2' ? 'bg-neutral-50' : 'bg-white')}
+                >
+                    <div>
+                        <span className="text-[10px] font-bold text-blue-900 uppercase tracking-widest mb-1 block">Aquisições</span>
+                        <h3 className="font-serif text-xl sm:text-2xl text-neutral-900">Cotação Prévia Nº 002/2026 - Bens e Serviços</h3>
+                    </div>
+                    <div className={`w-10 h-10 flex items-center justify-center border border-neutral-200 rounded-full transition-all duration-300 ${openTransparency === 'edital2' ? 'rotate-180 bg-neutral-900 text-white border-neutral-900' : ''}`}>
+                        <ChevronDown size={18} />
+                    </div>
+                </button>
+                <AnimatePresence>
+                    {openTransparency === 'edital2' && (
+                        <motion.div
+                            initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
+                            className="overflow-hidden"
+                        >
+                            <div className="p-6 md:p-8 pt-0 grid md:grid-cols-2 gap-8 text-sm text-neutral-600 border-t border-neutral-100 mt-4">
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="font-bold text-neutral-900 mb-1">Objeto do Edital</p>
+                                        <p>Prestação de serviços e aquisição de bens (medalhas, troféus, bolas, uniformes, arbitragem, ambulância, etc.) para a realização do Evento Copa União Satélite no DF.</p>
+                                    </div>
+                                    <div>
+                                        <p className="font-bold text-neutral-900 mb-1">Prazos</p>
+                                        <p><strong>Recebimento:</strong> 10/06/2026 até 15/06/2026</p>
+                                        <p><strong>Homologação:</strong> 15/06/2026 às 13h</p>
+                                    </div>
+                                </div>
+                                <div className="space-y-4">
+                                    <div>
+                                        <p className="font-bold text-neutral-900 mb-1">Informações Financeiras</p>
+                                        <p><strong>Convênio Relacionado:</strong> Termo de Fomento Nº 992769</p>
+                                        <p><strong>Valor Estimado:</strong> R$ 367.480,00</p>
+                                        <p><strong>Critério:</strong> Menor preço por item</p>
+                                    </div>
+                                    <div className="pt-2">
+                                        <a href="/Edital_Bens_e_Serviços (1) (1).docx (1).pdf" target="_blank" className="flex items-center justify-center gap-2 text-xs font-bold uppercase bg-blue-900 text-white hover:bg-blue-800 px-4 py-3 transition-colors w-full">
+                                            <FileText size={14} /> Baixar Edital Completo
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
           </div>
         </div>
